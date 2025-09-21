@@ -22,10 +22,7 @@ func _in_bounds(pos: Vector2i) -> bool:
 	"""
 	Helper function for determining whether a given point is in board bounds.
 	"""
-	if pos[0] < 0 or pos[0] <= grid_length or pos[1] < 0 or pos[1] <= grid_height:
-		return false
-	else:
-		return true
+	return pos.x >= 0 and pos.x < grid_length and pos[1] >= 0 and pos[1] < grid_height
 		
 func _update_visuals() -> void:
 	for y in range(grid_height):
@@ -122,6 +119,9 @@ func apply_color(new_color_idx: int) -> void:
 				
 	if check_win():
 		print("You Win! Sexy beast...")
+		generate_board()
+		_init_controlled(start_pos)
+		_update_visuals()
 		
 
 #
@@ -157,7 +157,7 @@ func generate_board() -> void:
 	controlled.clear()
 	for y in range(grid_height):
 		controlled.append([])
-		for x in range(grid_height):
+		for x in range(grid_length):
 			controlled[y].append(false)
 
 #

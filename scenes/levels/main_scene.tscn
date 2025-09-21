@@ -37,7 +37,8 @@ mesh = SubResource("PlaneMesh_wcw71")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0)
 
 [node name="Board" parent="." instance=ExtResource("1_ybdc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0460572, 0, -0.00445712)
+
+[node name="GameManager" type="Node3D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
