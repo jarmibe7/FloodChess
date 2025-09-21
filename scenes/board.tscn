@@ -4,3 +4,4 @@
 
 [node name="Board" type="Node3D"]
 script = ExtResource("1_bw3vb")
+grid_length = 10
